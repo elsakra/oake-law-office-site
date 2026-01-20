@@ -1,0 +1,76 @@
+{
+  "company": {
+    "name": "Professional Accounting Services",
+    "tagline": null,
+    "description": null,
+    "phone": null,
+    "email": null,
+    "address": null,
+    "hours": null
+  },
+  "branding": {
+    "logo": null,
+    "primaryColor": "#1e3a5f",
+    "secondaryColor": null
+  },
+  "hero": {
+    "headline": "Professional Accounting Solutions",
+    "subheadline": null,
+    "cta": {
+      "label": "Get Started",
+      "href": "/contact"
+    },
+    "secondaryCta": null,
+    "backgroundImage": "https://plus.unsplash.com/premium_photo-1661496138198-4399b346a8a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8dGVhbSUyMG1lZXRpbmclMjBwcm9mZXNzaW9uYWx8ZW58MHwwfHx8MTc2ODk0MTU5Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+  },
+  "sections": {
+    "about": {
+      "headline": "About Us",
+      "content": "We provide comprehensive accounting and financial services to businesses and individuals. Our experienced team is dedicated to helping clients achieve their financial goals through expert guidance and personalized solutions.",
+      "image": "https://plus.unsplash.com/premium_photo-1681487178876-a1156952ec60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8YnVzaW5lc3MlMjB3b3Jrc3BhY2UlMjBjbGVhbnxlbnwwfDB8fHwxNzY4OTQ2NTQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "values": [
+        {
+          "title": "Expert Guidance",
+          "description": "Professional accounting expertise you can trust"
+        },
+        {
+          "title": "Personalized Service",
+          "description": "Tailored solutions for your unique needs"
+        },
+        {
+          "title": "Reliable Support",
+          "description": "Consistent and dependable financial services"
+        }
+      ]
+    },
+    "services": {
+      "headline": "Our Services"
+    },
+    "team": {
+      "headline": "Our Team"
+    },
+    "testimonials": {
+      "headline": "What Our Clients Say"
+    },
+    "contact": {
+      "headline": "Contact Us"
+    }
+  },
+  "navigation": {
+    "items": [],
+    "ctaButton": {
+      "label": "Contact Us",
+      "href": "/contact"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Professional Accounting Services. All rights reserved.",
+    "socialLinks": {
+      "facebook": null
+    }
+  },
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}
