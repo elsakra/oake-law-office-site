@@ -1,11 +1,11 @@
 ---
 title: "Unfair Trade Practices"
-shortDescription: "Unfair trade practices legal services"
-image: "https://plus.unsplash.com/premium_photo-1743020414395-71cd641d7396?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NXx8YXR0b3JuZXklMjBvZmZpY2UlMjBtb2Rlcm58ZW58MHwwfHx8MTc2OTAyMjM4NHww&ixlib=rb-4.1.0&q=80&w=1080"
+shortDescription: "Unfair trade practices representation"
+image: "https://plus.unsplash.com/premium_photo-1743020414395-865b7f527417?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NXx8bGF3JTIwb2ZmaWNlJTIwaW50ZXJpb3IlMjBwcm9mZXNzaW9uYWx8ZW58MHwwfHx8MTc2ODk5MDc0NHww&ixlib=rb-4.1.0&q=80&w=1080"
 
 
 
 order: 5
 ---
 
-Representation on unfair trade practices matters
+Experience and expertise in unfair trade practices matters
