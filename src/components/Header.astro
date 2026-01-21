@@ -2,180 +2,195 @@
 import siteData from '@/data/site.json';
 const { navigation, company, branding } = siteData;
 const currentPath = Astro.url.pathname;
+
+// Accept prop for pages with light-colored hero sections
+interface Props {
+  lightHero?: boolean;
+}
+const { lightHero = false } = Astro.props;
 ---
 
-<header class="sticky top-0 z-50">
-  <!-- Utility bar - gray background like BDO -->
-  <div class="bg-slate-600 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-end h-8 text-xs">
-        <nav class="flex items-center gap-1">
-          {navigation.secondaryNav?.map((item, i) => (
-            <>
-              <a href={item.href} class="px-2 py-1 text-slate-200 hover:text-white transition-colors">
-                {item.label}
-              </a>
-              {i < (navigation.secondaryNav?.length || 0) - 1 && (
-                <span class="text-slate-400">|</span>
-              )}
-            </>
-          ))}
-          <span class="text-slate-400 ml-1">|</span>
-          <a href="/contact" class="px-2 py-1 text-slate-200 hover:text-white transition-colors">
-            Contact
-          </a>
-        </nav>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main navigation - white background -->
-  <nav class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-[72px]">
-        <!-- Logo with company name -->
-        <a href="/" class="flex items-center gap-3 flex-shrink-0">
-          <img src={branding.logo} alt={company.name} class="h-10 lg:h-12 w-auto" />
-          <span class="font-display text-lg lg:text-xl font-bold text-charcoal tracking-tight">
+<header class:list={["fixed top-0 left-0 right-0 z-50 transition-all duration-300", lightHero && "header-light-page"]} id="main-header">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 relative z-50">
+        {branding?.logo?.startsWith('http') ? (
+          <img 
+            src={branding.logo} 
+            alt={company.name} 
+            class="h-8 w-auto header-logo transition-all duration-300" 
+          />
+        ) : (
+          <span class="font-display text-2xl font-semibold header-text transition-all duration-300">
             {company.name}
           </span>
-        </a>
+        )}
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-8">
+        {navigation.items.map((item) => (
+          <a 
+            href={item.href}
+            class:list={[
+              "text-sm font-medium transition-colors header-link",
+              currentPath === item.href ? "text-primary-500" : ""
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+      
+      <!-- Right side: Search + Menu -->
+      <div class="flex items-center gap-4 relative z-50">
+        <!-- Search Button -->
+        <button 
+          type="button"
+          class="p-2 header-icon transition-colors"
+          aria-label="Search"
+          id="search-toggle"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
         
-        <!-- Desktop: Search + Hamburger only (like BDO) -->
-        <div class="flex items-center gap-4">
-          <!-- Search Button -->
-          <button 
-            type="button" 
-            class="p-2 text-charcoal hover:text-crimson transition-colors"
-            aria-label="Search"
-            id="search-toggle"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </button>
-          
-          <!-- Menu Button -->
-          <button 
-            type="button"
-            class="p-2 text-charcoal hover:text-crimson transition-colors"
-            aria-label="Open menu"
-            id="menu-button"
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" id="menu-icon-open">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" id="menu-icon-close">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+        <!-- Menu Button -->
+        <button 
+          type="button"
+          class="p-2 header-icon transition-colors"
+          aria-label="Open menu"
+          id="menu-toggle"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16" />
+          </svg>
+          <svg class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="close-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
     </div>
   </nav>
   
-  <!-- Full-screen Menu Overlay -->
-  <div class="fixed inset-0 bg-charcoal-900 z-40 hidden" id="menu-overlay">
-    <div class="h-full overflow-y-auto">
-      <!-- Menu Header -->
-      <div class="bg-charcoal-900 border-b border-charcoal-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-center justify-between h-16 lg:h-[72px]">
-            <a href="/" class="flex items-center gap-3">
-              <img src={branding.logo} alt={company.name} class="h-10 lg:h-12 w-auto brightness-0 invert" />
-            <span class="font-display text-lg lg:text-xl font-bold text-white tracking-tight">
-              {company.name}
-            </span>
-            </a>
-            <button 
-              type="button"
-              class="p-2 text-white hover:text-crimson transition-colors"
-              aria-label="Close menu"
-              id="menu-close"
-            >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Menu Content -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid lg:grid-cols-2 gap-12">
+  <!-- Search Overlay -->
+  <div class="fixed inset-0 bg-charcoal-950/98 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300" id="search-overlay">
+    <div class="max-w-3xl mx-auto px-6 pt-32">
+      <form class="relative" id="search-form">
+        <input 
+          type="search" 
+          placeholder="Search..." 
+          class="w-full bg-transparent border-b-2 border-neutral-700 text-white text-2xl md:text-4xl py-4 focus:outline-none focus:border-primary-500 placeholder-neutral-500 transition-colors"
+          id="search-input"
+        />
+        <button type="submit" class="absolute right-0 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-white transition-colors">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </form>
+      <p class="text-neutral-500 text-sm mt-6">Press ESC to close</p>
+    </div>
+  </div>
+  
+  <!-- Menu Overlay -->
+  <div class="fixed inset-0 bg-charcoal-950 z-40 hidden opacity-0 transition-opacity duration-300" id="menu-overlay">
+    <div class="h-full overflow-y-auto pt-24 pb-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
           <!-- Main Navigation -->
           <div>
             <nav class="space-y-1">
-              {navigation.items.map((item) => (
-                <div class="menu-nav-item">
-                  <a 
-                    href={item.href}
-                    class="group flex items-center justify-between py-4 border-b border-charcoal-700"
-                  >
-                    <span class="font-display text-2xl lg:text-3xl font-bold text-white group-hover:text-crimson transition-colors">
+              {navigation.items.map((item, index) => (
+                <a 
+                  href={item.href}
+                  class="group block py-3 border-b border-neutral-800 hover:border-primary-500 transition-colors"
+                  style={`animation-delay: ${index * 50}ms`}
+                >
+                  <span class="flex items-center justify-between">
+                    <span class="font-display text-3xl md:text-4xl text-white group-hover:text-primary-500 transition-colors">
                       {item.label}
                     </span>
-                    <svg class="w-6 h-6 text-slate-500 group-hover:text-crimson transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    <svg class="w-6 h-6 text-neutral-600 group-hover:text-primary-500 group-hover:translate-x-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </a>
-                  
-                  {item.dropdown && (
-                    <div class="py-4 pl-4 space-y-2">
-                      {item.dropdown.map((subItem) => (
-                        <a 
-                          href={subItem.href}
-                          class="block py-2 text-slate-400 hover:text-white transition-colors"
-                        >
-                          {subItem.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                  </span>
+                </a>
               ))}
+              
+              <!-- Additional menu items - Services/Practice Areas -->
+              <a href="/services" class="group block py-3 border-b border-neutral-800 hover:border-primary-500 transition-colors">
+                <span class="flex items-center justify-between">
+                  <span class="font-display text-3xl md:text-4xl text-white group-hover:text-primary-500 transition-colors">
+                    Practice Areas
+                  </span>
+                  <svg class="w-6 h-6 text-neutral-600 group-hover:text-primary-500 group-hover:translate-x-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </a>
+              
+              <!-- Resources -->
+              <a href="/resources" class="group block py-3 border-b border-neutral-800 hover:border-primary-500 transition-colors">
+                <span class="flex items-center justify-between">
+                  <span class="font-display text-3xl md:text-4xl text-white group-hover:text-primary-500 transition-colors">
+                    Resources
+                  </span>
+                  <svg class="w-6 h-6 text-neutral-600 group-hover:text-primary-500 group-hover:translate-x-2 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </a>
             </nav>
           </div>
           
-          <!-- Secondary Links & Contact -->
-          <div class="lg:pl-12 lg:border-l lg:border-charcoal-700">
-            <div class="mb-8">
-              <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Quick Links</h3>
-              <div class="space-y-3">
-                {navigation.secondaryNav?.map((item) => (
-                  <a 
-                    href={item.href}
-                    class="block text-slate-300 hover:text-white transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Contact</h3>
-              <div class="space-y-3 text-slate-300">
-                {company.phone && <p>{company.phone}</p>}
-                {company.email && <p>{company.email}</p>}
-                {company.address && (
-                  <p>
-                    {company.address?.street && <>{company.address.street}<br /></>}
-                    {(company.address?.city || company.address?.state || company.address?.zip) && (
-                      <>{company.address?.city}, {company.address?.state} {company.address?.zip}</>
-                    )}
-                  </p>
-                )}
-              </div>
-              <div class="mt-6">
-                <a 
-                  href="/contact"
-                  class="inline-flex items-center justify-center px-6 py-3 bg-crimson text-white font-semibold rounded hover:bg-crimson-dark transition-colors"
-                >
-                  Contact Us
+          <!-- Contact Info -->
+          <div class="lg:pt-8">
+            <div class="space-y-8">
+              <div>
+                <p class="text-neutral-500 text-sm uppercase tracking-wider mb-3">Contact</p>
+                <a href={`tel:${company.phone}`} class="block text-xl text-white hover:text-primary-500 transition-colors">
+                  {company.phone}
+                </a>
+                <a href={`mailto:${company.email}`} class="block text-xl text-white hover:text-primary-500 transition-colors mt-2">
+                  {company.email}
                 </a>
               </div>
+              
+              {company.address && (
+                <div>
+                  <p class="text-neutral-500 text-sm uppercase tracking-wider mb-3">Location</p>
+                  <address class="text-lg text-neutral-300 not-italic leading-relaxed">
+                    {typeof company.address === 'string' ? (
+                      <p>{company.address}</p>
+                    ) : (
+                      <>
+                        {company.address?.street && <p>{company.address.street}</p>}
+                        {(company.address?.city || company.address?.state || company.address?.zip) && (
+                          <p>
+                            {company.address?.city}{company.address?.city && company.address?.state ? ', ' : ''}
+                            {company.address?.state} {company.address?.zip}
+                          </p>
+                        )}
+                      </>
+                    )}
+                  </address>
+                </div>
+              )}
+              
+              {navigation.ctaButton && (
+                <a 
+                  href={navigation.ctaButton.href}
+                  class="inline-flex items-center gap-2 px-8 py-4 bg-primary-500 text-white text-lg font-semibold hover:bg-primary-600 transition-colors"
+                >
+                  {navigation.ctaButton.label}
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -184,32 +199,122 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
+<style>
+  /* Default state - white text for dark backgrounds */
+  .header-text { color: white; }
+  .header-link { color: rgba(255, 255, 255, 0.8); }
+  .header-link:hover { color: white; }
+  .header-icon { color: rgba(255, 255, 255, 0.8); }
+  .header-icon:hover { color: white; }
+  .header-logo { filter: brightness(0) invert(1); }
+  
+  /* Light page state - dark text for pages with light hero backgrounds */
+  .header-light-page .header-text { color: #18181B; }
+  .header-light-page .header-link { color: #525252; }
+  .header-light-page .header-link:hover { color: #18181B; }
+  .header-light-page .header-icon { color: #525252; }
+  .header-light-page .header-icon:hover { color: #18181B; }
+  .header-light-page .header-logo { filter: none; }
+  
+  /* Scrolled state - dark text for white background */
+  .header-scrolled .header-text { color: #18181B; }
+  .header-scrolled .header-link { color: #525252; }
+  .header-scrolled .header-link:hover { color: #18181B; }
+  .header-scrolled .header-icon { color: #525252; }
+  .header-scrolled .header-icon:hover { color: #18181B; }
+  .header-scrolled .header-logo { filter: none; }
+  .header-scrolled { background-color: rgba(255, 255, 255, 0.98); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  
+  /* Menu open state - always white text on dark overlay */
+  .menu-open .header-text { color: white !important; }
+  .menu-open .header-link { color: rgba(255, 255, 255, 0.8) !important; }
+  .menu-open .header-icon { color: rgba(255, 255, 255, 0.8) !important; }
+  .menu-open .header-logo { filter: brightness(0) invert(1) !important; }
+  .menu-open { background-color: transparent !important; box-shadow: none !important; }
+</style>
+
 <script>
-  const menuButton = document.getElementById('menu-button');
-  const menuClose = document.getElementById('menu-close');
+  const header = document.getElementById('main-header');
+  const searchToggle = document.getElementById('search-toggle');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchInput = document.getElementById('search-input');
+  const menuToggle = document.getElementById('menu-toggle');
   const menuOverlay = document.getElementById('menu-overlay');
-  const menuIconOpen = document.getElementById('menu-icon-open');
-  const menuIconClose = document.getElementById('menu-icon-close');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
   
-  function openMenu() {
-    menuOverlay?.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    menuIconOpen?.classList.add('hidden');
-    menuIconClose?.classList.remove('hidden');
+  let menuOpen = false;
+  let searchOpen = false;
+  
+  // Scroll behavior
+  function handleScroll() {
+    if (!menuOpen && !searchOpen) {
+      if (window.scrollY > 50) {
+        header?.classList.add('header-scrolled');
+      } else {
+        header?.classList.remove('header-scrolled');
+      }
+    }
   }
   
-  function closeMenu() {
-    menuOverlay?.classList.add('hidden');
-    document.body.style.overflow = '';
-    menuIconOpen?.classList.remove('hidden');
-    menuIconClose?.classList.add('hidden');
-  }
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
   
-  menuButton?.addEventListener('click', openMenu);
-  menuClose?.addEventListener('click', closeMenu);
+  // Search toggle
+  searchToggle?.addEventListener('click', () => {
+    searchOpen = !searchOpen;
+    if (searchOpen) {
+      searchOverlay?.classList.remove('hidden');
+      setTimeout(() => searchOverlay?.classList.remove('opacity-0'), 10);
+      searchInput?.focus();
+      document.body.style.overflow = 'hidden';
+    } else {
+      searchOverlay?.classList.add('opacity-0');
+      setTimeout(() => searchOverlay?.classList.add('hidden'), 300);
+      document.body.style.overflow = '';
+    }
+  });
   
-  // Close on escape key
+  // Menu toggle
+  menuToggle?.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      menuOverlay?.classList.remove('hidden');
+      setTimeout(() => menuOverlay?.classList.remove('opacity-0'), 10);
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+      header?.classList.add('menu-open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      menuOverlay?.classList.add('opacity-0');
+      setTimeout(() => menuOverlay?.classList.add('hidden'), 300);
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      header?.classList.remove('menu-open');
+      document.body.style.overflow = '';
+      handleScroll();
+    }
+  });
+  
+  // Close on ESC
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
+    if (e.key === 'Escape') {
+      if (searchOpen) {
+        searchOpen = false;
+        searchOverlay?.classList.add('opacity-0');
+        setTimeout(() => searchOverlay?.classList.add('hidden'), 300);
+        document.body.style.overflow = '';
+      }
+      if (menuOpen) {
+        menuOpen = false;
+        menuOverlay?.classList.add('opacity-0');
+        setTimeout(() => menuOverlay?.classList.add('hidden'), 300);
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+        header?.classList.remove('menu-open');
+        document.body.style.overflow = '';
+        handleScroll();
+      }
+    }
   });
 </script>

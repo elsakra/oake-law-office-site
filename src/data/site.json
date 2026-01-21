@@ -1,11 +1,11 @@
 {
   "company": {
-    "name": "Professional Accounting Services",
-    "tagline": null,
-    "description": null,
-    "phone": null,
-    "email": null,
-    "address": null,
+    "name": "OAKE LAW OFFICE, PLLC",
+    "tagline": "PATENT AND INTELLECTUAL PROPERTY STRATEGY AND LITIGATION",
+    "description": "Oake Law Office, PLLC was founded in 1988 and specializes in patent and intellectual property strategy and litigation. The firm represents patent owners whose patents are being infringed and also those who believe they are being wrongly accused of patent infringement. Our experience and expertise includes representation on related matters as well, such as trademark, trade dress and trade secret law, and unfair trade practices.",
+    "phone": "(972) 752-8333",
+    "email": "rgo@oake.com",
+    "address": "700 S. Central Expressway, Suite 400, Allen, Texas 75013",
     "hours": null
   },
   "branding": {
@@ -14,40 +14,40 @@
     "secondaryColor": null
   },
   "hero": {
-    "headline": "Professional Accounting Solutions",
-    "subheadline": null,
+    "headline": "PATENT AND INTELLECTUAL PROPERTY STRATEGY AND LITIGATION",
+    "subheadline": "Specializing in patent and intellectual property law since 1988",
     "cta": {
-      "label": "Get Started",
-      "href": "/contact"
+      "label": "About",
+      "href": "/about"
     },
     "secondaryCta": null,
-    "backgroundImage": "https://plus.unsplash.com/premium_photo-1661496138198-4399b346a8a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8dGVhbSUyMG1lZXRpbmclMjBwcm9mZXNzaW9uYWx8ZW58MHwwfHx8MTc2ODk0MTU5Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+    "backgroundImage": "https://plus.unsplash.com/premium_photo-1661315485321-8e0310da42d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8bGVnYWwlMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nfGVufDB8MHx8fDE3Njg5MjA4MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
   },
   "sections": {
     "about": {
       "headline": "About Us",
-      "content": "We provide comprehensive accounting and financial services to businesses and individuals. Our experienced team is dedicated to helping clients achieve their financial goals through expert guidance and personalized solutions.",
-      "image": "https://plus.unsplash.com/premium_photo-1681487178876-a1156952ec60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8YnVzaW5lc3MlMjB3b3Jrc3BhY2UlMjBjbGVhbnxlbnwwfDB8fHwxNzY4OTQ2NTQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "content": "Oake Law Office, PLLC was founded in 1988 and specializes in patent and intellectual property strategy and litigation. The firm represents patent owners whose patents are being infringed and also those who believe they are being wrongly accused of patent infringement. Our experience and expertise includes representation on related matters as well, such as trademark, trade dress and trade secret law, and unfair trade practices. Our practice includes successfully representing litigants and applicants appearing before district courts, appellate courts, the United States Patent and Trademark Office, and the Trademark Trial and Appeal Board.",
+      "image": "https://plus.unsplash.com/premium_photo-1661315485321-8e0310da42d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8bGVnYWwlMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nfGVufDB8MHx8fDE3Njg5MjA4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "values": [
         {
-          "title": "Expert Guidance",
-          "description": "Professional accounting expertise you can trust"
+          "title": "Triple Board Certified",
+          "description": "Patent Litigation, Civil Trial Law, and Civil Practice Advocacy"
         },
         {
-          "title": "Personalized Service",
-          "description": "Tailored solutions for your unique needs"
+          "title": "Design Patent Pro",
+          "description": "Created and maintains the DPP ProSearch database for practitioners"
         },
         {
-          "title": "Reliable Support",
-          "description": "Consistent and dependable financial services"
+          "title": "Federal Circuit Experience",
+          "description": "Argued eleven cases before the Federal Circuit Court of Appeals"
         }
       ]
     },
     "services": {
-      "headline": "Our Services"
+      "headline": "Practice Areas"
     },
     "team": {
-      "headline": "Our Team"
+      "headline": "Our Attorneys"
     },
     "testimonials": {
       "headline": "What Our Clients Say"
@@ -57,20 +57,37 @@
     }
   },
   "navigation": {
-    "items": [],
+    "items": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/contact"
+      },
+      {
+        "label": "Articles",
+        "href": "/contact"
+      },
+      {
+        "label": "Design Patent Pro",
+        "href": "/contact"
+      }
+    ],
     "ctaButton": {
-      "label": "Contact Us",
+      "label": "Articles",
       "href": "/contact"
     }
   },
   "footer": {
-    "copyright": "© 2024 Professional Accounting Services. All rights reserved.",
+    "copyright": "© 2024 OAKE LAW OFFICE, PLLC. All rights reserved.",
     "socialLinks": {
       "facebook": null
     }
   },
   "seo": {
-    "title": null,
+    "title": "Home - OAKE LAW OFFICE, PLLC",
     "description": null
   }
 }

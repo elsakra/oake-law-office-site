@@ -140,153 +140,71 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"faq": {
-"engagement-process.md": {
-	id: "engagement-process.md";
-  slug: "engagement-process";
+		"blog": Record<string, {
+  id: string;
+  slug: string;
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">;
+  render(): Render[".md"];
+}>;
+"case-results": Record<string, {
+  id: string;
+  slug: string;
+  body: string;
+  collection: "case-results";
+  data: InferEntrySchema<"case-results">;
+  render(): Render[".md"];
+}>;
+"faq": Record<string, {
+  id: string;
+  slug: string;
   body: string;
   collection: "faq";
-  data: InferEntrySchema<"faq">
-} & { render(): Render[".md"] };
-"industries-served.md": {
-	id: "industries-served.md";
-  slug: "industries-served";
-  body: string;
-  collection: "faq";
-  data: InferEntrySchema<"faq">
-} & { render(): Render[".md"] };
-};
-"industries": {
-"financial-services.md": {
-	id: "financial-services.md";
-  slug: "financial-services";
-  body: string;
-  collection: "industries";
-  data: InferEntrySchema<"industries">
-} & { render(): Render[".md"] };
-"healthcare.md": {
-	id: "healthcare.md";
-  slug: "healthcare";
-  body: string;
-  collection: "industries";
-  data: InferEntrySchema<"industries">
-} & { render(): Render[".md"] };
-"manufacturing.md": {
-	id: "manufacturing.md";
-  slug: "manufacturing";
-  body: string;
-  collection: "industries";
-  data: InferEntrySchema<"industries">
-} & { render(): Render[".md"] };
-"nonprofit.md": {
-	id: "nonprofit.md";
-  slug: "nonprofit";
-  body: string;
-  collection: "industries";
-  data: InferEntrySchema<"industries">
-} & { render(): Render[".md"] };
-"real-estate.md": {
-	id: "real-estate.md";
-  slug: "real-estate";
-  body: string;
-  collection: "industries";
-  data: InferEntrySchema<"industries">
-} & { render(): Render[".md"] };
-"technology.md": {
-	id: "technology.md";
-  slug: "technology";
-  body: string;
-  collection: "industries";
-  data: InferEntrySchema<"industries">
-} & { render(): Render[".md"] };
-};
-"insights": {
-"2025-tax-policy-changes.md": {
-	id: "2025-tax-policy-changes.md";
-  slug: "2025-tax-policy-changes";
-  body: string;
-  collection: "insights";
-  data: InferEntrySchema<"insights">
-} & { render(): Render[".md"] };
-"ai-in-accounting.md": {
-	id: "ai-in-accounting.md";
-  slug: "ai-in-accounting";
-  body: string;
-  collection: "insights";
-  data: InferEntrySchema<"insights">
-} & { render(): Render[".md"] };
-"esg-reporting-requirements.md": {
-	id: "esg-reporting-requirements.md";
-  slug: "esg-reporting-requirements";
-  body: string;
-  collection: "insights";
-  data: InferEntrySchema<"insights">
-} & { render(): Render[".md"] };
-"irs-catch-up-contribution-regulations.md": {
-	id: "irs-catch-up-contribution-regulations.md";
-  slug: "irs-catch-up-contribution-regulations";
-  body: string;
-  collection: "insights";
-  data: InferEntrySchema<"insights">
-} & { render(): Render[".md"] };
-};
-"locations": {
-"professional-accounting-services.md": {
-	id: "professional-accounting-services.md";
-  slug: "professional-accounting-services";
-  body: string;
-  collection: "locations";
-  data: InferEntrySchema<"locations">
-} & { render(): Render[".md"] };
-};
+  data: InferEntrySchema<"faq">;
+  render(): Render[".md"];
+}>;
 "services": {
-"advisory.md": {
-	id: "advisory.md";
-  slug: "advisory";
+"patent-and-intellectual-property-strategy-and-litigation.md": {
+	id: "patent-and-intellectual-property-strategy-and-litigation.md";
+  slug: "patent-and-intellectual-property-strategy-and-litigation";
   body: string;
   collection: "services";
   data: InferEntrySchema<"services">
 } & { render(): Render[".md"] };
-"audit-assurance.md": {
-	id: "audit-assurance.md";
-  slug: "audit-assurance";
+"trade-dress-law.md": {
+	id: "trade-dress-law.md";
+  slug: "trade-dress-law";
   body: string;
   collection: "services";
   data: InferEntrySchema<"services">
 } & { render(): Render[".md"] };
-"digital-technology.md": {
-	id: "digital-technology.md";
-  slug: "digital-technology";
+"trade-secret-law.md": {
+	id: "trade-secret-law.md";
+  slug: "trade-secret-law";
   body: string;
   collection: "services";
   data: InferEntrySchema<"services">
 } & { render(): Render[".md"] };
-"tax.md": {
-	id: "tax.md";
-  slug: "tax";
+"trademark-law.md": {
+	id: "trademark-law.md";
+  slug: "trademark-law";
+  body: string;
+  collection: "services";
+  data: InferEntrySchema<"services">
+} & { render(): Render[".md"] };
+"unfair-trade-practices.md": {
+	id: "unfair-trade-practices.md";
+  slug: "unfair-trade-practices";
   body: string;
   collection: "services";
   data: InferEntrySchema<"services">
 } & { render(): Render[".md"] };
 };
 "team": {
-"jennifer-walsh.md": {
-	id: "jennifer-walsh.md";
-  slug: "jennifer-walsh";
-  body: string;
-  collection: "team";
-  data: InferEntrySchema<"team">
-} & { render(): Render[".md"] };
-"michael-torres.md": {
-	id: "michael-torres.md";
-  slug: "michael-torres";
-  body: string;
-  collection: "team";
-  data: InferEntrySchema<"team">
-} & { render(): Render[".md"] };
-"sarah-chen.md": {
-	id: "sarah-chen.md";
-  slug: "sarah-chen";
+"robert-g-oake-jr.md": {
+	id: "robert-g-oake-jr.md";
+  slug: "robert-g-oake-jr";
   body: string;
   collection: "team";
   data: InferEntrySchema<"team">
@@ -304,7 +222,72 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		
+		"athletics": Record<string, {
+  id: string;
+  collection: "athletics";
+  data: any;
+}>;
+"events": Record<string, {
+  id: string;
+  collection: "events";
+  data: any;
+}>;
+"faculty": Record<string, {
+  id: string;
+  collection: "faculty";
+  data: any;
+}>;
+"industries": Record<string, {
+  id: string;
+  collection: "industries";
+  data: any;
+}>;
+"insights": Record<string, {
+  id: string;
+  collection: "insights";
+  data: any;
+}>;
+"listings": Record<string, {
+  id: string;
+  collection: "listings";
+  data: any;
+}>;
+"locations": Record<string, {
+  id: string;
+  collection: "locations";
+  data: any;
+}>;
+"menu": Record<string, {
+  id: string;
+  collection: "menu";
+  data: any;
+}>;
+"news": Record<string, {
+  id: string;
+  collection: "news";
+  data: any;
+}>;
+"portfolio": Record<string, {
+  id: string;
+  collection: "portfolio";
+  data: any;
+}>;
+"pricing-plans": Record<string, {
+  id: string;
+  collection: "pricing-plans";
+  data: any;
+}>;
+"products": Record<string, {
+  id: string;
+  collection: "products";
+  data: any;
+}>;
+"programs": Record<string, {
+  id: string;
+  collection: "programs";
+  data: any;
+}>;
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
