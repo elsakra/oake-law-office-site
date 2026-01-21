@@ -21,7 +21,7 @@
       "href": "/about"
     },
     "secondaryCta": null,
-    "backgroundImage": "https://plus.unsplash.com/premium_photo-1661315485321-8e0310da42d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8bGVnYWwlMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nfGVufDB8MHx8fDE3Njg5MjA4MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    "backgroundImage": "https://plus.unsplash.com/premium_photo-1661315485321-8e0310da42d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8bGVnYWwlMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nfGVufDB8MHx8fDE3NjkwMjIzMjl8MA&ixlib=rb-4.1.0&q=80&w=1080"
   },
   "sections": {
     "about": {
@@ -31,15 +31,15 @@
       "values": [
         {
           "title": "Triple Board Certified",
-          "description": "Patent Litigation, Civil Trial Law, and Civil Practice Advocacy"
+          "description": "Patent Litigation, Civil Trial Law, and Civil Practice Advocacy certification"
         },
         {
-          "title": "Design Patent Pro",
-          "description": "Created and maintains the DPP ProSearch database for practitioners"
+          "title": "Design Patent Pro Database",
+          "description": "Created and maintains the DPP ProSearch database for practitioners and researchers"
         },
         {
           "title": "Federal Circuit Experience",
-          "description": "Argued eleven cases before the Federal Circuit Court of Appeals"
+          "description": "Argued eleven cases before the Federal Circuit Court of Appeals including en banc cases"
         }
       ]
     },
