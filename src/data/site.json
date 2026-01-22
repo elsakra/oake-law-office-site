@@ -21,25 +21,26 @@
       "href": "/about"
     },
     "secondaryCta": null,
-    "backgroundImage": "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1920&h=1080&fit=crop&q=80"
+    "backgroundImage": "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1920&h=1080&fit=crop&q=80",
+    "imageOpacity": 35
   },
   "sections": {
     "about": {
       "headline": "About Us",
       "content": "Oake Law Office, PLLC was founded in 1988 and specializes in patent and intellectual property strategy and litigation. The firm represents patent owners whose patents are being infringed and also those who believe they are being wrongly accused of patent infringement. Our experience and expertise includes representation on related matters as well, such as trademark, trade dress and trade secret law, and unfair trade practices. Our practice includes successfully representing litigants and applicants appearing before district courts, appellate courts, the United States Patent and Trademark Office, and the Trademark Trial and Appeal Board.",
-      "image": "https://plus.unsplash.com/premium_photo-1743020414411-e0c24b154432?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8YXR0b3JuZXklMjBvZmZpY2UlMjBtb2Rlcm58ZW58MHwwfHx8MTc2ODk0MzIyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "image": "https://plus.unsplash.com/premium_photo-1743020414456-aaaa3aebf10f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MXx8YXR0b3JuZXklMjBvZmZpY2UlMjBtb2Rlcm58ZW58MHwwfHx8MTc2OTA4NDMxNHww&ixlib=rb-4.1.0&q=85",
       "values": [
         {
           "title": "Triple Board Certified",
           "description": "Patent Litigation, Civil Trial Law, and Civil Practice Advocacy certification"
         },
         {
-          "title": "Design Patent Pro",
-          "description": "Created and maintains the DPP ProSearch database for design patent research"
+          "title": "Experienced Trial Counsel",
+          "description": "Lead counsel in landmark cases including Egyptian Goddess v. Swisa"
         },
         {
-          "title": "Federal Circuit Experience",
-          "description": "Argued eleven cases before the Federal Circuit Court of Appeals"
+          "title": "Design Patent Pro Database",
+          "description": "Created and maintains the DPP ProSearch database for design patent research"
         }
       ]
     },
@@ -89,5 +90,7 @@
   "seo": {
     "title": "Home - OAKE LAW OFFICE, PLLC",
     "description": null
-  }
+  },
+  "theme": "dark",
+  "vibe": "corporate"
 }

@@ -1,7 +1,7 @@
 ---
 title: "Trade Secret Law"
 shortDescription: "Trade secret law representation"
-image: "https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8bGVnYWwlMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nfGVufDB8MHx8fDE3NjkwMzI1MTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image: "https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8bGVnYWwlMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nfGVufDB8MHx8fDE3NjkwMzI1MTB8MA&ixlib=rb-4.1.0&q=85"
 
 
 
